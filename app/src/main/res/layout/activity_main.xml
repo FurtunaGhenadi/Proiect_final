@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <TextView
+        android:id="@+id/antet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="true"
+        android:shadowColor="?attr/colorAccent"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:text="Calculator vîrstă"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textStyle="bold|italic" />
+
+    <LinearLayout
+        android:id="@+id/present_day"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/antet">
+
+        <DatePicker
+            android:id="@+id/datePicker_azi"
+            android:layout_width="265dp"
+            android:layout_height="140dp"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+        <ImageView
+            android:id="@+id/img_azi"
+            android:layout_width="150sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/img_calendar_a" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/birth_day"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/img_mamy_baby"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/present_day">
+
+        <TextView
+            android:id="@+id/nastere"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+
+            android:includeFontPadding="true"
+            android:padding="5dp"
+            android:shadowColor="?attr/colorAccent"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:text="Te-ai născut ..."
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="24sp"
+            android:textStyle="bold|italic" />
+
+        <DatePicker
+            android:id="@+id/datePicker_nastere"
+            android:layout_width="265dp"
+            android:layout_height="140dp"
+            android:layout_gravity="right"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/calcul"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:text="Calcul"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birth_day" />
+
+    <LinearLayout
+        android:id="@+id/rezultat"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calcul">
+
+        <TextView
+            android:id="@+id/virsta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="?attr/colorAccent"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:text="Vârsta ta este:"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold|italic" />
+
+        <TableLayout
+            android:id="@+id/afisare_virsta"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow android:id="@+id/ani">
+
+                <ImageView
+                    android:id="@+id/img_ani"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/img_ani" />
+
+                <TextView
+                    android:id="@+id/virsta_ani"
+                    android:layout_height="35dp"
+                    android:width="200dp"
+                    android:gravity="center_vertical"
+                    android:text="Ani"
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+
+            <TableRow android:id="@+id/luni">
+
+                <ImageView
+                    android:id="@+id/img_luni"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/img_luni" />
+
+                <TextView
+                    android:id="@+id/virsta_luni"
+                    android:layout_height="35dp"
+                    android:width="200dp"
+                    android:text="Luni "
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/zile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_zile"
+                    android:layout_width="115dp"
+                    android:layout_height="35dp"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/img_zile" />
+
+                <TextView
+                    android:id="@+id/virsta_zile"
+                    android:layout_height="35dp"
+                    android:text="Zile"
+                    android:textColor="#000000"
+                    android:textSize="22sp"
+                    android:textStyle="bold|italic" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/refresh"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:text="Refresh"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rezultat" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
